@@ -1,22 +1,15 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import App from './App.js'
-const counter = (state = 0, action) => {
-switch(action.type) {
-case 'INCREMENT':
-   return state = state + 1;
-case 'DECREMENT':
-   return state = state - 1;
-default:
-   return state;
- }
-};
-const store = createStore(counter);
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import {Provider} from 'react-redux'
+import store from './store'
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,23 +1,13 @@
 import React from 'react';
-import { connect} from 'react-redux'
-const App = (props) => {
-return(
-  <div>
-   <p>{props.count}</p>
-   <button onClick={props.increment}>+</button>
-   <button  onClick={props.decrement}>-</button>
-  </div>
- );
-};
-function mapStateToProps(state) {
-return {
-  count: state
- };
+import './App.css';
+import PostsContainer from './components/postsContainer'
+
+function App() {
+  return (
+    <div className='App'>
+      <PostsContainer />
+    </div>
+  );
 }
-function mapDispatchToProps(dispatch) {
- return {
-  increment: () => dispatch({type: 'INCREMENT'}),
-  decrement: () => dispatch({type: 'DECREMENT'})
- };
-}
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default App;
